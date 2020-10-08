@@ -2,3 +2,4 @@
 cmake-build-debug
 aeclipso.filler
 CMakeLists.txt
+.idea

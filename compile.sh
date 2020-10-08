@@ -1,1 +1,1 @@
-gcc -g main.c read_player.c ./libft-printf/libft.a -I ./include -I ./libft-printf/include -o aeclipso.filler
+gcc -g main.c read_player.c read_map.c read_piece.c ./libft-printf/libft.a -I ./include -I ./libft-printf/include -o aeclipso.filler
