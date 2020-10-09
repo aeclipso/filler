@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 23:06:20 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/09 23:51:09 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int					ft_solver(t_field *general)
 	if(ft_memhmap(general))
 	{
 		ft_create_h_map(general);
-		debug_print_heat_map(general); //debug
 		ft_searchdist(general);
+		debug_print_heat_map(general); //debug
 	}
 }
