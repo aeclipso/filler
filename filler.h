@@ -15,19 +15,28 @@
 
 #include "./libft-printf/include/libft.h"
 
-typedef struct s_field{
-	int			player;			//if player 0 - letter O, else X
-	int			opponent;		//if opponent 1 - letter X, else O
+typedef struct	s_field{
+	char		player;			//if player 0 - letter O, else X
+	char		opponent;		//if opponent 1 - letter X, else O
 	char		**field;		//field after reading, don't forget free memory, after game
 	int			h_map;			//visota karty 
 	int			w_map;			//shirina karty
 	char		**piece;		//piece, after reading
 	int			h_piece;		//visota kuska
 	int			w_piece;		//shirina kuska
-}t_field;
+	int			**heat_map;
+}				t_field;
+
+
 
 int				ft_reading_player(char **line, t_field *general);
 int				ft_reading_mapsize(char **line, t_field *general);
 int				ft_reading_map(char **line, t_field *general);
 int				ft_reading_piece(char **line, t_field *general);
+int				ft_solver(t_field *general);
+
+int				ft_memhmap(t_field *general);
+int				ft_create_h_map(t_field *general);
+
+
 #endif //FILLER_FILLER_H

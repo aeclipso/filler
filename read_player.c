@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:18:02 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/07 23:18:45 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/08 21:26:37 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static int				ft_validateplayer(char **line, t_field *general)
 	{
 		if (ft_strequ(playername, "[aeclipso.filler]") && (*line)[10] == '1')
 		{
-			general->player = 1;
-			general->opponent = 0;
+			general->player = 'O';
+			general->opponent = 'X';
 		}
 		else
 		{
-			general->player = 0;
-			general->opponent = 1;
+			general->player = 'X';
+			general->opponent = 'O';
 		}
 	}
 	free(playername);

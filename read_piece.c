@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 14:33:50 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/08 17:35:50 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/09 16:11:32 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@ static int		ft_reading_piece_s(char **line, t_field *general)
 	int			y;
 
 	y = 0;
-	if (!(general->piece = (char**)malloc(sizeof(char*) * general->h_piece)))
+	if (!(general->piece = (char**)malloc(sizeof(char*) * (general->h_piece + 1))))
 		return(0);
 	while (y < general->h_piece)
 	{
 		if (get_next_line(0, line) > 0)
 		{
-			if (!(general->piece[y] = (char*)malloc(sizeof(char) * general->w_piece + 1)))
+			if (!(general->piece[y] = (char*)malloc(sizeof(char) * (general->w_piece + 1))))
 				return (0);
 			ft_strcpy(general->piece[y], *line);
 			free(*line);
 		}
 		y++;
 	}
+	general->piece[y] = NULL;
 }
 
 int				ft_reading_piece(char **line, t_field *general)
