@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:06:33 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 19:08:35 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/09 23:12:26 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int			ft_create_h_map(t_field *general)
 		{
 			if(general->field[y][x] == '.')
 				general->heat_map[y][x] = 0;
-			else if(ft_toupper(general->field[y][x] == general->player))
+			else if(ft_toupper(general->field[y][x]) == general->player)
 				general->heat_map[y][x] = -1;
-			else if (ft_toupper(general->field[y][x] == general->opponent))
+			else if (ft_toupper(general->field[y][x]) == general->opponent)
 				general->heat_map[y][x] = -2;
 			else
 				return (0);
