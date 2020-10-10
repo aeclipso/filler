@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:18:02 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 23:57:11 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/10 17:01:42 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 static int				ft_validateplayer(char **line, t_field *general)
 {
 	char		*playername;
+	char		*gn;
 
 	playername = ft_strsub(*line, 14, ft_strlen(*line) - 14);
+	gn = ft_strstr(playername, "aeclipso.filler]");
+	ft_printf("GN%s\n", gn);
+	ft_printf("PN\t%s\n", playername);
 	if (ft_strnequ("$$$ exec p", *line, 10))
 	{
-		if (ft_strequ(playername, "[aeclipso.filler]") && (*line)[10] == '1') //TODO: NEED DEBUG
+		if (ft_strequ(gn, "aeclipso.filler]") && (*line)[10] == '1') //TODO: NEED DEBUG
 		{
 			general->player = 'O';
 			general->opponent = 'X';
@@ -31,6 +35,7 @@ static int				ft_validateplayer(char **line, t_field *general)
 		}
 	}
 	free(playername);
+	return (1);
 }
 
 int				ft_reading_player(char **line, t_field *general)
@@ -47,4 +52,5 @@ int				ft_reading_player(char **line, t_field *general)
 	}
 	get_next_line(0, line);
 	free(*line);
+	return (1);
 }
