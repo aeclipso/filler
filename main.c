@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:12:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 16:39:17 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/10 17:45:12 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int             ft_core(void)
 	
 	ft_printf("READ_PL\n");
 	ft_reading_player(&line, &general);
+	ft_printf("\nPLAYER -> %c\nOPPONENT -> %c\n", general.player, general.opponent);
 	ft_printf("READ_MS\n");
 	ft_reading_mapsize(&line, &general);
 	ft_printf("READ_MAP\n");
@@ -75,6 +76,7 @@ int             ft_core(void)
 	ft_printf("SLV\n");
 	ft_solver(&general);
 	ft_freeser(&general);
+	return (0);
 }
 // TODO: 1) функция определения первой звёздочки 
 // 2) тепловая карта или её аналог 3) функция подстановки
@@ -82,6 +84,7 @@ int             ft_core(void)
 int             main(void)
 {
 	ft_core();
+	return (0);
 }
 
 

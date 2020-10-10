@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 14:33:50 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 16:11:32 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/10 15:20:14 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int		ft_reading_piece_s(char **line, t_field *general)
 		y++;
 	}
 	general->piece[y] = NULL;
+	return (1);
 }
 
 int				ft_reading_piece(char **line, t_field *general)
@@ -53,4 +54,5 @@ int				ft_reading_piece(char **line, t_field *general)
 		free(*line);
 	}
 	ft_reading_piece_s(line, general);
+	return (1);
 }

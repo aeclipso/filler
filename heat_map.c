@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:06:33 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/09 23:12:26 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/10 15:21:09 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ int			ft_create_h_map(t_field *general)
 		y++;
 		x = 0;
 	}
+	return (1);
 }

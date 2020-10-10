@@ -14,6 +14,7 @@
 #define FILLER_FILLER_H
 
 #include "./libft-printf/include/libft.h"
+# define REV_NAME "]rellif.ospilcea"
 
 typedef struct	s_field{
 	char		player;			//if player 0 - letter O, else X
