@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 22:43:02 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:44:37 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int			ft_searchmind(t_field *general, int i, int j)
 
 	x = 0;
 	y = 0;
-	min_step = 2147483647;
+	min_step = 1000;
 	while (y < general->h_map)
 	{
 		while (x < general->w_map)
@@ -85,10 +85,10 @@ int					ft_solver(t_field *general)
 	if(ft_memhmap(general))
 	{
 		ft_create_h_map(general);
+		// debug_print_heat_map(general); //debug
 		ft_searchdist(general);
-		debug_print_heat_map(general); //debug
 		ft_setpiece(general);
-		ft_printf("COORD:\tx = %i\ty=%i\n", general->x, general->y);
+		// ft_printf("COORD:\tx = %i\ty=%i\n", general->x, general->y);
 	}
 	return (1);
 }

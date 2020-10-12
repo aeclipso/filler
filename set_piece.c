@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:05:53 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 22:38:55 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:18:03 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int		ft_seton(t_field *general, int i, int j)
 			if (general->piece[x][y] == '*')
 			{
 				if ((i + x) < 0 || (i + x) >= general->h_map
-					|| (y + j) < 0 || (x + i) >= general->w_map
+					|| (y + j) < 0 || (y + j) >= general->w_map
 					|| general->heat_map[x + i][y + j] == -2)
 				return (-1);
 				if (general->heat_map[x + i][y + j] == -1)

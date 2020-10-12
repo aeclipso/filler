@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:12:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/10 18:24:33 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:44:47 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,17 @@ void			ft_freeser(t_field *general)
 		free_piece(general);
 }
 
+void ft_debugPrintMap(t_field *general)
+{
+	int i = 0;
+	while (i < general->h_map)
+	{
+		ft_printf("%s\n", general->field[i]);
+		i++;
+	}
+	
+}
+
 int             ft_core(void)
 {
 	char        *line;
@@ -71,10 +82,12 @@ int             ft_core(void)
 	ft_reading_mapsize(&line, &general);
 	ft_printf("READ_MAP\n");
 	ft_reading_map(&line, &general);
+	// ft_debugPrintMap(&general);
 	ft_printf("READ_PIECE\n");
 	ft_reading_piece(&line, &general);
 	ft_printf("SLV\n");
 	ft_solver(&general);
+	ft_printf("%i %i\n", general.y, general.x);
 	ft_freeser(&general);
 	return (0);
 }

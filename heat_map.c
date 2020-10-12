@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:06:33 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/10 15:21:09 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:53:12 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,19 @@ int			ft_create_h_map(t_field *general)
 	y = 0;
 	while (general->field[y])
 	{
+		ft_printf("%s\n", general->field[y]);
 		while (general->field[y][x])
 		{
 			if(general->field[y][x] == '.')
 				general->heat_map[y][x] = 0;
-			else if(ft_toupper(general->field[y][x]) == general->player)
+			else if(ft_toupper(general->field[y][x]) == ft_toupper(general->player))
 				general->heat_map[y][x] = -1;
-			else if (ft_toupper(general->field[y][x]) == general->opponent)
+			else if (ft_toupper(general->field[y][x]) == ft_toupper(general->opponent))
 				general->heat_map[y][x] = -2;
-			else
-				return (0);
+			ft_printf("%i ", general->heat_map[y][x]);
 			x++;
 		}
+		ft_printf("\n");
 		y++;
 		x = 0;
 	}
