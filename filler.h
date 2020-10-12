@@ -26,6 +26,8 @@ typedef struct	s_field{
 	int			h_piece;		//visota kuska
 	int			w_piece;		//shirina kuska
 	int			**heat_map;
+	int			x;				//reshenie x
+	int			y;				//reshenie y
 }				t_field;
 
 
@@ -38,6 +40,6 @@ int				ft_solver(t_field *general);
 
 int				ft_memhmap(t_field *general);
 int				ft_create_h_map(t_field *general);
-
+int				ft_setpiece(t_field *general);
 
 #endif //FILLER_FILLER_H
