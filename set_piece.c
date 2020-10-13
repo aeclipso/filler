@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:05:53 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 17:24:50 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 19:33:39 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int		ft_seton(t_field *general, int i, int j)
 	return ((it.iter == 1) ? it.place : -1);
 }
 
-int				ft_setpiece(t_field *general)
+int				ft_setpiece(t_field *general)			//исправить для токенов которые больше чем карта
 {
 	int			i;
 	int			j;

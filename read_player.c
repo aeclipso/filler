@@ -6,13 +6,13 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:18:02 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 17:18:46 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 19:27:32 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static int				ft_validateplayer(char **line, t_field *general)
+static int				ft_validateplayer(char **line, t_field *general) //читать только номер игрока
 {
 	char				*playername;
 	char				*gn;
