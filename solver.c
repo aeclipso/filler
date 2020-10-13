@@ -6,30 +6,11 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 23:44:37 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:27:09 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-#include <stdio.h>
-void				debug_print_heat_map(t_field *general)
-{ //debug
-	int i = 0;
-	int j = 0;
-
-	while (i < general->h_map)
-	{
-		while (j < general->w_map)
-		{
-			printf("%i\t", general->heat_map[i][j]);
-			j++;
-		}
-			printf("\n");
-		j = 0;
-		i++;
-	}
-}
 
 static int			ft_searchmind(t_field *general, int i, int j)
 {
@@ -45,7 +26,7 @@ static int			ft_searchmind(t_field *general, int i, int j)
 	{
 		while (x < general->w_map)
 		{
-			if(general->heat_map[y][x] == -2)
+			if (general->heat_map[y][x] == -2)
 			{
 				step = ft_abs(x - i) + ft_abs(y - j);
 				if (step < min_step)
@@ -82,13 +63,11 @@ static int			ft_searchdist(t_field *general)
 
 int					ft_solver(t_field *general)
 {
-	if(ft_memhmap(general))
+	if (ft_memhmap(general))
 	{
 		ft_create_h_map(general);
-		// debug_print_heat_map(general); //debug
 		ft_searchdist(general);
 		ft_setpiece(general);
-		// ft_printf("COORD:\tx = %i\ty=%i\n", general->x, general->y);
 	}
 	return (1);
 }

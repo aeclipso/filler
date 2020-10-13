@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:05:53 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 23:18:03 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:24:50 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,32 @@ static int		ft_seton(t_field *general, int i, int j)
 {
 	int			x;
 	int			y;
-	int			place;
-	int			iter;
+	t_itplace	it;
 
-	place = 0;
-	iter = 0;
-	x = 0;
-	y = 0;
-	while (x < general->h_piece)
+	ft_bzero(&it, sizeof(t_itplace));
+	x = -1;
+	while (++x < general->h_piece)
 	{
-		while (y < general->w_piece)
+		y = -1;
+		while (++y < general->w_piece)
 		{
 			if (general->piece[x][y] == '*')
 			{
 				if ((i + x) < 0 || (i + x) >= general->h_map
 					|| (y + j) < 0 || (y + j) >= general->w_map
 					|| general->heat_map[x + i][y + j] == -2)
-				return (-1);
+					return (-1);
 				if (general->heat_map[x + i][y + j] == -1)
-					iter++;
-				place += general->heat_map[x + i][y + j];
+					it.iter++;
+				it.place += general->heat_map[x + i][y + j];
 			}
-			y++;
 		}
-		x++;
-		y = 0;
 	}
-	return ((iter == 1) ? place : -1);
+	return ((it.iter == 1) ? it.place : -1);
 }
 
 int				ft_setpiece(t_field *general)
 {
-	//TODO: write function, which calculate place 
-	//on the map for set figure
 	int			i;
 	int			j;
 	int			place;
@@ -78,4 +71,5 @@ int				ft_setpiece(t_field *general)
 		i++;
 		j = general->w_piece;
 	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:18:02 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 23:29:11 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:18:46 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int				ft_validateplayer(char **line, t_field *general)
 {
-	char		*playername;
-	char		*gn;
+	char				*playername;
+	char				*gn;
 
 	playername = ft_strsub(*line, 14, ft_strlen(*line) - 14);
 	gn = ft_strstr(playername, "aeclipso.filler]");
@@ -23,7 +23,7 @@ static int				ft_validateplayer(char **line, t_field *general)
 	ft_printf("PN\t%s\n", playername);
 	if (ft_strnequ("$$$ exec p", *line, 10))
 	{
-		if (ft_strequ(gn, "aeclipso.filler]") && (*line)[10] == '1') //TODO: NEED DEBUG
+		if (ft_strequ(gn, "aeclipso.filler]") && (*line)[10] == '1')
 		{
 			general->player = 'O';
 			general->opponent = 'X';
@@ -38,9 +38,9 @@ static int				ft_validateplayer(char **line, t_field *general)
 	return (1);
 }
 
-int				ft_reading_player(char **line, t_field *general)
+int						ft_reading_player(char **line, t_field *general)
 {
-	int			i;
+	int					i;
 
 	i = 0;
 	while (i < 1)

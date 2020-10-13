@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:22:04 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/10 15:19:46 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:29:41 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,24 @@ int				ft_reading_mapsize(char **line, t_field *general)
 	return (1);
 }
 
-int				ft_reading_map(char **line, t_field *general)
+int				ft_reading_map(char **line, t_field *gen)
 {
 	int			y;
 
 	y = 0;
-	if (!(general->field = (char**)malloc(sizeof(char*) * (general->h_map + 1))))
+	if (!(gen->field = (char**)malloc(sizeof(char*) * (gen->h_map + 1))))
 		return (0);
-	while (y < general->h_map)
+	while (y < gen->h_map)
 	{
 		if (get_next_line(0, line) > 0)
 		{
-			if (!(general->field[y] = (char *)malloc(sizeof(char) * (general->w_map + 1))))
+			if (!(gen->field[y] = (char *)malloc(gen->w_map + 1)))
 				return (0);
-			ft_strcpy(general->field[y], &(*line)[4]);
+			ft_strcpy(gen->field[y], &(*line)[4]);
 			free(*line);
 		}
 		y++;
 	}
-	general->field[y] = NULL;
+	gen->field[y] = NULL;
 	return (1);
 }

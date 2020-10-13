@@ -6,26 +6,26 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:06:33 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/12 23:53:12 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:38:00 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int			ft_memhmap(t_field *general)
+int			ft_memhmap(t_field *gen)
 {
 	int				i;
 
 	i = 0;
-	if(!(general->heat_map = (int**)malloc(sizeof(int*) * general->h_map)))
+	if (!(gen->heat_map = (int**)malloc(sizeof(int*) * gen->h_map)))
 		return (0);
-	while (i < general->h_map)
+	while (i < gen->h_map)
 	{
-		if(!(general->heat_map[i] = (int*)malloc(sizeof(int) * general->w_map)))
+		if (!(gen->heat_map[i] = (int*)malloc(sizeof(int) * gen->w_map)))
 		{
 			while (--i >= 0)
-				free(general->heat_map[i]);
-			free(general->heat_map);
+				free(gen->heat_map[i]);
+			free(gen->heat_map);
 			return (0);
 		}
 		i++;
@@ -33,28 +33,25 @@ int			ft_memhmap(t_field *general)
 	return (1);
 }
 
-int			ft_create_h_map(t_field *general)
+int			ft_create_h_map(t_field *gen)
 {
 	int				x;
 	int				y;
 
 	x = 0;
 	y = 0;
-	while (general->field[y])
+	while (gen->field[y])
 	{
-		ft_printf("%s\n", general->field[y]);
-		while (general->field[y][x])
+		while (gen->field[y][x])
 		{
-			if(general->field[y][x] == '.')
-				general->heat_map[y][x] = 0;
-			else if(ft_toupper(general->field[y][x]) == ft_toupper(general->player))
-				general->heat_map[y][x] = -1;
-			else if (ft_toupper(general->field[y][x]) == ft_toupper(general->opponent))
-				general->heat_map[y][x] = -2;
-			ft_printf("%i ", general->heat_map[y][x]);
+			if (gen->field[y][x] == '.')
+				gen->heat_map[y][x] = 0;
+			else if (ft_toupper(gen->field[y][x]) == ft_toupper(gen->player))
+				gen->heat_map[y][x] = -1;
+			else if (ft_toupper(gen->field[y][x]) == ft_toupper(gen->opponent))
+				gen->heat_map[y][x] = -2;
 			x++;
 		}
-		ft_printf("\n");
 		y++;
 		x = 0;
 	}

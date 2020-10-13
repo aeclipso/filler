@@ -1,1 +1,1 @@
-gcc -g main.c read_player.c read_map.c read_piece.c solver.c heat_map.c set_piece.c ./libft-printf/libft.a -I ./include -I ./libft-printf/include -o aeclipso.filler
+gcc -g main.c read_player.c read_map.c read_piece.c solver.c heat_map.c set_piece.c free.c ./libft-printf/libft.a -I ./include -I ./libft-printf/include -o aeclipso.filler

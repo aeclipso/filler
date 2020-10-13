@@ -6,31 +6,31 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 14:33:50 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/10 15:20:14 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/13 17:33:47 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static int		ft_reading_piece_s(char **line, t_field *general)
+static int		ft_reading_piece_s(char **line, t_field *gen)
 {
 	int			y;
 
 	y = 0;
-	if (!(general->piece = (char**)malloc(sizeof(char*) * (general->h_piece + 1))))
-		return(0);
-	while (y < general->h_piece)
+	if (!(gen->piece = (char**)malloc(sizeof(char*) * (gen->h_piece + 1))))
+		return (0);
+	while (y < gen->h_piece)
 	{
 		if (get_next_line(0, line) > 0)
 		{
-			if (!(general->piece[y] = (char*)malloc(sizeof(char) * (general->w_piece + 1))))
+			if (!(gen->piece[y] = (char*)malloc(gen->w_piece + 1)))
 				return (0);
-			ft_strcpy(general->piece[y], *line);
+			ft_strcpy(gen->piece[y], *line);
 			free(*line);
 		}
 		y++;
 	}
-	general->piece[y] = NULL;
+	gen->piece[y] = NULL;
 	return (1);
 }
 

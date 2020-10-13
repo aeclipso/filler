@@ -30,6 +30,10 @@ typedef struct	s_field{
 	int			y;				//reshenie y
 }				t_field;
 
+typedef struct	s_itplace{
+	int			iter;
+	int			place;
+}				t_itplace;
 
 
 int				ft_reading_player(char **line, t_field *general);
@@ -41,5 +45,6 @@ int				ft_solver(t_field *general);
 int				ft_memhmap(t_field *general);
 int				ft_create_h_map(t_field *general);
 int				ft_setpiece(t_field *general);
+void			ft_freeser(t_field *general);
 
 #endif //FILLER_FILLER_H
