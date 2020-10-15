@@ -4,6 +4,7 @@ aeclipso.filler
 CMakeLists.txt
 .idea
 .DS_Store
+.DS_Store
 aeclipso.filler.dSYM
 resources
 resources-linuxs

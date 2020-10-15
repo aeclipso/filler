@@ -6,11 +6,31 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 17:27:09 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/15 20:25:12 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+
+void ft_debugPrintMap2(t_field *general)
+{
+	int i = 0;
+	int j = 0;
+	ft_printf("DEBUGPRINTMAP\n");
+	while (i < general->h_map)
+	{
+		j = 0;
+		while (j < general->w_map)
+		{
+			ft_printf("%i ", general->heat_map[i][j]);
+			j++;
+		}
+		ft_printf("\n");
+		i++;
+	}
+	ft_printf("DEBUGPRINTMAPEND\n");
+}
 
 static int			ft_searchmind(t_field *general, int i, int j)
 {
@@ -21,7 +41,7 @@ static int			ft_searchmind(t_field *general, int i, int j)
 
 	x = 0;
 	y = 0;
-	min_step = 1000;
+	min_step = 2147483647;
 	while (y < general->h_map)
 	{
 		while (x < general->w_map)
@@ -61,13 +81,23 @@ static int			ft_searchdist(t_field *general)
 	return (1);
 }
 
+int				ft_print(t_field *general)
+{
+	ft_putnbr(general->y);
+	write(1, " ", 1);
+	ft_putnbr(general->x);
+	write(1, "\n", 1);
+	return (1);
+}
+
 int					ft_solver(t_field *general)
 {
 	if (ft_memhmap(general))
 	{
 		ft_create_h_map(general);
+		// ft_debugPrintMap2(general);
 		ft_searchdist(general);
 		ft_setpiece(general);
 	}
-	return (1);
+	return (ft_print(general));
 }
