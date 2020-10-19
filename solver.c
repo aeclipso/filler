@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/15 20:25:12 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/19 14:33:54 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,11 @@ static int			ft_searchdist(t_field *general)
 
 int				ft_print(t_field *general)
 {
+	if (general->x == -1 && general->y == -1)
+	{
+		ft_putstr("0 0\n");
+		return (0);
+	}
 	ft_putnbr(general->y);
 	write(1, " ", 1);
 	ft_putnbr(general->x);

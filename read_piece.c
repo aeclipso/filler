@@ -6,13 +6,13 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 14:33:50 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 17:33:47 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/19 14:26:53 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static int		ft_reading_piece_s(char **line, t_field *gen)
+int		ft_reading_piece_s(char **line, t_field *gen)
 {
 	int			y;
 
@@ -31,7 +31,7 @@ static int		ft_reading_piece_s(char **line, t_field *gen)
 		y++;
 	}
 	gen->piece[y] = NULL;
-	return (1);
+	return (0);
 }
 
 int				ft_reading_piece(char **line, t_field *general)
@@ -53,6 +53,7 @@ int				ft_reading_piece(char **line, t_field *general)
 		}
 		free(*line);
 	}
-	ft_reading_piece_s(line, general);
-	return (1);
+	else
+		return (1);
+	return (0);
 }

@@ -40,6 +40,7 @@ int			ft_reading_player(char **line, t_field *general);
 int				ft_reading_mapsize(char **line, t_field *general);
 int				ft_reading_map(char **line, t_field *general);
 int				ft_reading_piece(char **line, t_field *general);
+int				ft_reading_piece_s(char **line, t_field *gen);
 int				ft_solver(t_field *general);
 
 int				ft_memhmap(t_field *general);

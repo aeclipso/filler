@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:22:04 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 17:29:41 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/19 14:14:23 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ int				ft_reading_mapsize(char **line, t_field *general)
 			free(size);
 		}
 		free(*line);
+		get_next_line(0, line);
+		free(*line);
 	}
-	get_next_line(0, line);
-	free(*line);
-	return (1);
+	else
+		return (1);
+	return (0);
 }
 
 int				ft_reading_map(char **line, t_field *gen)
@@ -55,5 +57,5 @@ int				ft_reading_map(char **line, t_field *gen)
 		y++;
 	}
 	gen->field[y] = NULL;
-	return (1);
+	return (0);
 }
