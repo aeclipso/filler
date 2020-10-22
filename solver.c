@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/19 14:33:54 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:00:43 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int				ft_print(t_field *general)
 		ft_putstr("0 0\n");
 		return (0);
 	}
-	ft_putnbr(general->y);
-	write(1, " ", 1);
 	ft_putnbr(general->x);
+	write(1, " ", 1);
+	ft_putnbr(general->y);
 	write(1, "\n", 1);
 	return (1);
 }
