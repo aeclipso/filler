@@ -36,7 +36,7 @@ typedef struct	s_itplace{
 }				t_itplace;
 
 
-int			ft_reading_player(char **line, t_field *general);
+int				ft_reading_player(char **line, t_field *general);
 int				ft_reading_mapsize(char **line, t_field *general);
 int				ft_reading_map(char **line, t_field *general);
 int				ft_reading_piece(char **line, t_field *general);

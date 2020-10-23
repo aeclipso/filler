@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:05:53 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/13 19:33:39 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/22 17:56:40 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ int				ft_setpiece(t_field *general)			//исправить для токено�
 	int			near_place;
 
 	near_place = 2147483647;
-	i = general->h_piece;
-	j = general->w_piece;
-	while (i < general->h_map - general->h_piece)
+	i = -(general->h_map);
+	while (i < general->h_map + general->h_piece)
 	{
-		while (j < general->w_map - general->w_piece)
+		j = -(general->w_map);
+		while (j < general->w_map + general->w_piece)
 		{
 			place = ft_seton(general, i, j);
 			if (place != -1 && place < near_place)
@@ -69,7 +69,6 @@ int				ft_setpiece(t_field *general)			//исправить для токено�
 			j++;
 		}
 		i++;
-		j = general->w_piece;
 	}
 	return (1);
 }

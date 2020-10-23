@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:12:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/15 20:28:05 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/23 23:30:56 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,13 @@ void ft_debugPrintMap(t_field *general)
 
 int				ft_circle(char *line, t_field *general)
 {
-	if (!(ft_reading_mapsize(&line, general)))
+	if (ft_reading_mapsize(&line, general) != 0)
 		return (0);
-	else if(!(ft_reading_map(&line, general)))
+	else if(ft_reading_map(&line, general) != 0)
 		return (0);
-	else if(!(ft_reading_piece(&line, general)))
+	else if(ft_reading_piece(&line, general) != 0)
+		return (0);
+	else if(ft_reading_piece_s(&line, general) != 0)
 		return (0);
 	else 
 		return (ft_solver(general));
@@ -95,7 +97,7 @@ int				ft_core(void)
 	// // ft_debugPrintMap(&general);
 	// ft_printf("%i %i\n", general.y, general.x);
 	// ft_freeser(&general);
-	// return (0);
+	return (0);
 }
 
 /*
