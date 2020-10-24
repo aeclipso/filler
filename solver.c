@@ -6,31 +6,11 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/22 17:42:53 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/24 13:43:26 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-
-void ft_debugPrintMap2(t_field *general)
-{
-	int i = 0;
-	int j = 0;
-	// ft_printf("DEBUGPRINTMAP\n");
-	while (i < general->h_map)
-	{
-		j = 0;
-		while (j < general->w_map)
-		{
-			ft_printf("%i ", general->heat_map[i][j]);
-			j++;
-		}
-		ft_printf("\n");
-		i++;
-	}
-	// ft_printf("DEBUGPRINTMAPEND\n");
-}
 
 static int			ft_searchmind(t_field *general, int i, int j)
 {
@@ -49,16 +29,11 @@ static int			ft_searchmind(t_field *general, int i, int j)
 			if (general->heat_map[y][x] == -2)
 			{
 				step = ft_abs(x - i) + ft_abs(y - j);
-				if (step < min_step )
-				{
+				if (step < min_step)
 					min_step = step;
-					// ft_printf("\n\nTHIS %i\n\n", general->heat_map[y][x]);
-				}
 			}
 			x++;
-			// ft_printf("%i  ", general->heat_map[y][x]);
 		}
-		// ft_printf("\n");
 		x = 0;
 		y++;
 	}
@@ -86,7 +61,7 @@ static int			ft_searchdist(t_field *general)
 	return (1);
 }
 
-int				ft_print(t_field *general)
+int					ft_print(t_field *general)
 {
 	if (general->x == -1 && general->y == -1)
 	{
@@ -106,7 +81,6 @@ int					ft_solver(t_field *general)
 	{
 		ft_create_h_map(general);
 		ft_searchdist(general);
-		// ft_debugPrintMap2(general);
 		ft_setpiece(general);
 	}
 	return (ft_print(general));

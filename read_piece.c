@@ -6,13 +6,13 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 14:33:50 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/19 14:26:53 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/24 13:41:25 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int		ft_reading_piece_s(char **line, t_field *gen)
+int				ft_reading_piece_s(char **line, t_field *gen)
 {
 	int			y;
 

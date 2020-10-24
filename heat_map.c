@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:06:33 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/22 17:40:57 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/24 13:51:11 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int			ft_create_h_map(t_field *gen)
 
 	x = 0;
 	y = 0;
-		// ft_printf("STARTING HEATMAP0\n");
 	while (gen->field[y])
 	{
 		while (gen->field[y][x])
@@ -51,13 +50,10 @@ int			ft_create_h_map(t_field *gen)
 				gen->heat_map[y][x] = -1;
 			else if (ft_toupper(gen->field[y][x]) == ft_toupper(gen->opponent))
 				gen->heat_map[y][x] = -2;
-			// ft_printf("%i ", gen->heat_map[y][x]);
 			x++;
 		}
-		// ft_printf("\n");
 		y++;
 		x = 0;
 	}
-	// ft_printf("ENDING HEATMAP0\n");
 	return (1);
 }
