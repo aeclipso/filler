@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 23:12:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/24 13:48:30 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/25 16:14:16 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int				ft_core(void)
 	while (ft_circle(line, &general))
 		;
 	return (1);
-	ft_freeser(&general);
-	return (0);
 }
 
 /*

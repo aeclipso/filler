@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 14:30:57 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/10/24 13:43:26 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/10/25 16:14:30 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int			ft_searchmind(t_field *general, int i, int j)
 		{
 			if (general->heat_map[y][x] == -2)
 			{
-				step = ft_abs(x - i) + ft_abs(y - j);
+				step = ft_abs(y - i) + ft_abs(x - j);
 				if (step < min_step)
 					min_step = step;
 			}
@@ -72,6 +72,7 @@ int					ft_print(t_field *general)
 	write(1, " ", 1);
 	ft_putnbr(general->y);
 	write(1, "\n", 1);
+	ft_freeser(general);
 	return (1);
 }
 
